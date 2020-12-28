@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "mailparser": "^3.0.1",
+    "pushover-notifications": "^1.2.2",
+    "smtp-server": "^3.8.0"
+  },
+  "name": "smtp-pushover",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT"
+}
