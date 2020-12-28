@@ -1,0 +1,12 @@
+version: '2.4'
+services:
+  smtp-pushover:
+    restart: unless-stopped
+    container_name: smtp-pushover
+    build: .
+    ports:
+      - "25:25"
+    environment:
+      - PORT=25
+      - PUSHOVER_USER
+      - PUSHOVER_TOKEN
