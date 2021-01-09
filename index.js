@@ -10,26 +10,22 @@ const {
 
 const server = new SMTPServer({
   authOptional: true,
-  onData(stream, session, callback) {
-    simpleParser(stream)
-      .then(parsed => {
-        console.log(`From -> ${parsed.from.text}`);
-        console.log(`Subject -> ${parsed.subject}`);
-        console.log(`Text -> ${parsed.text}`);
+  async onData(stream, session, callback) {
+    const parsedMessage = await simpleParser(stream);
 
-        const p = new Push({
-          user: PUSHOVER_USER,
-          token: PUSHOVER_TOKEN,
-        });
+    console.log(`From -> ${parsed.from.text}`);
+    console.log(`Subject -> ${parsed.subject}`);
+    console.log(`Text -> ${parsed.text}`);
 
-        p.send({
-          title: parsed.subject,
-          message: parsed.text,
-        }, callback);
-      })
-      .catch(error => {
-        throw error;
-      });
+    const push = new Push({
+      user: PUSHOVER_USER,
+      token: PUSHOVER_TOKEN,
+    });
+
+    push.send({
+      title: parsed.subject,
+      message: parsed.text,
+    }, callback);
   },
 });
 
