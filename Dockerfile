@@ -1,13 +1,19 @@
-FROM node:12
+FROM node:14-alpine AS build
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY package.json .
 COPY yarn.lock .
+RUN yarn install --frozen-lockfile
 
-RUN yarn install
+COPY tsconfig.json .
+COPY src src
+RUN yarn build && yarn install --production --frozen-lockfile
 
-COPY . .
+FROM node:14-alpine AS production
 
-EXPOSE 25
-CMD [ "node", "index.js" ]
+WORKDIR /app
+COPY --from=build /app/node_modules/ node_modules/
+COPY --from=build /app/dist dist
+
+ENTRYPOINT [ "node", "dist/index.js" ]
