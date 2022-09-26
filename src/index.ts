@@ -29,4 +29,4 @@ const server = new SMTPServer({
   },
 });
 
-server.listen(PORT);
+server.listen(PORT, () => console.log(`Listening on port ${PORT}`));
