@@ -1,6 +1,6 @@
-const SMTPServer = require('smtp-server').SMTPServer;
-const simpleParser = require('mailparser').simpleParser;
-const Push = require('pushover-notifications');
+import { SMTPServer } from 'smtp-server';
+import { simpleParser } from 'mailparser';
+import * as Push from 'pushover-notifications';
 
 const {
   PORT = 25,
@@ -10,7 +10,7 @@ const {
 
 const server = new SMTPServer({
   authOptional: true,
-  async onData(stream, session, callback) {
+  async onData(stream, _session, callback) {
     const parsed = await simpleParser(stream);
 
     console.log(`From -> ${parsed.from.text}`);
