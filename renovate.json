@@ -3,7 +3,8 @@
   "extends": [
     "config:base",
     "group:allNonMajor",
-    ":pinAllExceptPeerDependencies"
+    ":pinAllExceptPeerDependencies",
+    "schedule:monthly"
   ],
   "packageRules": [
     {
