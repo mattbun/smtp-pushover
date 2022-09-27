@@ -11,9 +11,9 @@
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
-    "mailparser": "^3.0.1",
-    "pushover-notifications": "^1.2.2",
-    "smtp-server": "^3.8.0"
+    "mailparser": "3.0.1",
+    "pushover-notifications": "1.2.2",
+    "smtp-server": "3.8.0"
   },
   "devDependencies": {
     "@types/jest": "29.0.3",
