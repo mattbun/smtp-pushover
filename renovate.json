@@ -6,6 +6,9 @@
     ":pinAllExceptPeerDependencies",
     "schedule:monthly"
   ],
+  "npm": {
+    "stabilityDays": 7
+  },
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
