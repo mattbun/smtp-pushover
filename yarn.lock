@@ -3683,7 +3683,7 @@ lru-cache@^7.4.4, lru-cache@^7.5.1, lru-cache@^7.7.1:
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-7.14.0.tgz#21be64954a4680e303a09e9468f880b98a0b3c7f"
   integrity sha512-EIRtP1GrSJny0dqb50QXRUNBxHJhcpxHC++M5tD7RYbvLLn5KVWKsbyswSSqDuU15UFi3bgTQIY8nhDMeF6aDQ==
 
-mailparser@^3.0.1:
+mailparser@3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/mailparser/-/mailparser-3.0.1.tgz#c186f744907143fdb155f2e8aef25dc24e498458"
   integrity sha512-bI6qE0rkyy+O2ZszMijmC6XJ67yvVeCWcZjvWj+6VOHR3FqMjYFMMsExPbFmDVxu0R0PnziYL3ZRv2l0ahCXiw==
@@ -4596,7 +4596,7 @@ punycode@^2.1.0:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
-pushover-notifications@^1.2.2:
+pushover-notifications@1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/pushover-notifications/-/pushover-notifications-1.2.2.tgz#32bd13f862bade346fe84313b695d6c34b84d69c"
   integrity sha512-+3Xcj+kiMiouZK1Ws8yGBTyl8WMPZZdELgl/iVxYqNwDdlaObBHMhEGPRC6Zb9t0BE27ikOoOqSIO1cKZOtsDA==
@@ -4968,7 +4968,7 @@ smart-buffer@^4.2.0:
   resolved "https://registry.yarnpkg.com/smart-buffer/-/smart-buffer-4.2.0.tgz#6e1d71fa4f18c05f7d0ff216dd16a481d0e8d9ae"
   integrity sha512-94hK0Hh8rPqQl2xXc3HsaBoOXKV20MToPkcXvwbISWLEs+64sBq5kFgn2kJDHb1Pry9yrP0dxrCI9RRci7RXKg==
 
-smtp-server@^3.8.0:
+smtp-server@3.8.0:
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/smtp-server/-/smtp-server-3.8.0.tgz#21d7f3f7cee2778883c9a73e1824a657c9680565"
   integrity sha512-MuHxJj6vyInpFZTt0J8kkPHEw+VrJTYLcadu5N/8xmU0AowPdZonTptRQvYxC1MGQ5FlC1YtbtMXeeY+TV5aNg==
