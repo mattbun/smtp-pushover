@@ -13,7 +13,6 @@ const server = new SMTPServer({
   async onData(stream, _session, callback) {
     const parsed = await simpleParser(stream);
 
-    console.log(`From -> ${parsed.from.text}`);
     console.log(`Subject -> ${parsed.subject}`);
     console.log(`Text -> ${parsed.text}`);
 
