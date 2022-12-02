@@ -8,7 +8,8 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "debug": "node --inspect-brk dist/index.js",
-    "test": "jest --passWithNoTests"
+    "test": "jest --passWithNoTests",
+    "sendmail": "echo -e \"Subject: subject\n\ntext\" | msmtp -v --host localhost --port 2525 --from from@test.com to@test.com"
   },
   "dependencies": {
     "mailparser": "3.5.0",
