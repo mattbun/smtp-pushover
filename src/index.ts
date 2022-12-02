@@ -13,8 +13,11 @@ const server = new SMTPServer({
   async onData(stream, _session, callback) {
     const parsed = await simpleParser(stream);
 
-    console.log(`Subject -> ${parsed.subject}`);
-    console.log(`Text -> ${parsed.text}`);
+    const subject = (parsed.subject ?? "").trim();
+    const text = (parsed.text ?? "").trim();
+
+    console.log(`Subject -> ${subject}`);
+    console.log(`Text -> ${text}`);
 
     const push = new Push({
       user: PUSHOVER_USER,
@@ -22,8 +25,8 @@ const server = new SMTPServer({
     });
 
     push.send({
-      title: parsed.subject,
-      message: parsed.text,
+      title: subject,
+      message: text,
     }, callback);
   },
 });
