@@ -1,4 +1,5 @@
-FROM node:16-alpine AS build
+ARG NODE_VERSION=16.18.1
+FROM node:${NODE_VERSION}-alpine AS build
 
 WORKDIR /app
 
@@ -10,7 +11,7 @@ COPY tsconfig.json .
 COPY src src
 RUN yarn build && yarn install --production --frozen-lockfile
 
-FROM node:16-alpine AS production
+FROM node:${NODE_VERSION}-alpine AS production
 
 WORKDIR /app
 COPY --from=build /app/node_modules/ node_modules/
