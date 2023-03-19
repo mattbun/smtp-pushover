@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "dist/index.js",
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
