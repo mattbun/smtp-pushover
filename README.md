@@ -10,7 +10,7 @@ It's an easy way to get tools like `smartmontools` to send you push notification
 
 ## How do I use it?
 
-smtp-pushover is provided as [a docker image](https://hub.docker.com/r/mattbun/smtp-pushover).
+Docker images are available at [Docker Hub](https://hub.docker.com/r/mattbun/smtp-pushover) and [GitHub Container Registry](https://github.com/mattbun/smtp-pushover/pkgs/container/smtp-pushover).
 
 To use it with `docker-compose`, you could configure it like this:
 
@@ -19,7 +19,7 @@ services:
   smtp-pushover:
     restart: unless-stopped
     container_name: smtp-pushover
-    image: mattbun/smtp-pushover
+    image: ghcr.io/mattbun/smtp-pushover
     ports:
       - "25:25"
     environment:
