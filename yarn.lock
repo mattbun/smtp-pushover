@@ -1211,10 +1211,10 @@
   resolved "https://registry.yarnpkg.com/@types/retry/-/retry-0.12.0.tgz#2b35eccfcee7d38cd72ad99232fbd58bffb3c84d"
   integrity sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==
 
-"@types/smtp-server@3.5.7":
-  version "3.5.7"
-  resolved "https://registry.yarnpkg.com/@types/smtp-server/-/smtp-server-3.5.7.tgz#0bfc5d3489db94565baee305444d9a551bbd9a3b"
-  integrity sha512-8HtcCeN1DCu3P3D4unfRlwRT2sM54PQSBnfwCf6HZl4CH234lTvTJxKXvZtcJajg8mCgiSLkJ6rratEhxgvhqQ==
+"@types/smtp-server@3.5.8":
+  version "3.5.8"
+  resolved "https://registry.yarnpkg.com/@types/smtp-server/-/smtp-server-3.5.8.tgz#2e7aec5a96d08bfe666e4c00b616f750808eafc2"
+  integrity sha512-y/bMyUkF73U06l4R2a3b0Z0gsLovELzLr2syfJzVoeIwfQqxM7c5/f9bbRaBJtCyUb12BA1GVuW1YfjU5hLHOg==
   dependencies:
     "@types/node" "*"
     "@types/nodemailer" "*"
