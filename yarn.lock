@@ -1161,10 +1161,10 @@
     expect "^29.0.0"
     pretty-format "^29.0.0"
 
-"@types/mailparser@3.4.0":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@types/mailparser/-/mailparser-3.4.0.tgz#89dae9d5ca68d9f450b9ed51518e89d57092fef9"
-  integrity sha512-MotFinA1sT2nPFtQw1WpaF3X6I1OdbEloaixMmk924BOYqwHmlZkoi7XcVUXHI+7i0to8JguHqYj5k/E6c9Chw==
+"@types/mailparser@3.4.1":
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/@types/mailparser/-/mailparser-3.4.1.tgz#143a3f35ac98707e55aa24e2b8de97432472f5ef"
+  integrity sha512-ZEF3ElxrEY/7cmo6YCOZVIwJRyUae3ioic4llB7qjmwHZdaElvsnefnvkS8Jakc4U9vBvQJvfTlK5Q/67DyAqQ==
   dependencies:
     "@types/node" "*"
     iconv-lite "^0.6.3"
