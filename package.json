@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@types/jest": "29.5.10",
-    "@types/mailparser": "3.4.3",
+    "@types/mailparser": "3.4.4",
     "@types/node": "18.18.7",
     "@types/smtp-server": "3.5.9",
     "conventional-changelog-conventionalcommits": "5.0.0",
