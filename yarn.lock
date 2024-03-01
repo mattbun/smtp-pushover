@@ -4167,11 +4167,6 @@ node-releases@^2.0.6:
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.6.tgz#8a7088c63a55e493845683ebf3c828d8c51c5503"
   integrity sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg==
 
-nodemailer@6.9.4:
-  version "6.9.4"
-  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.9.4.tgz#93bd4a60eb0be6fa088a0483340551ebabfd2abf"
-  integrity sha512-CXjQvrQZV4+6X5wP6ZIgdehJamI63MFoYFGGPtHudWym9qaEHDNdPzaj5bfMCvxG1vhAileSWW90q7nL0N36mA==
-
 nodemailer@6.9.9:
   version "6.9.9"
   resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.9.9.tgz#4549bfbf710cc6addec5064dd0f19874d24248d9"
@@ -4766,6 +4761,11 @@ promzard@^0.3.0:
   dependencies:
     read "1"
 
+punycode@2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.3.1.tgz#027422e2faec0b25e1549c3e1bd8309b9133b6e5"
+  integrity sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==
+
 punycode@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
@@ -5162,14 +5162,15 @@ smart-buffer@^4.2.0:
   resolved "https://registry.yarnpkg.com/smart-buffer/-/smart-buffer-4.2.0.tgz#6e1d71fa4f18c05f7d0ff216dd16a481d0e8d9ae"
   integrity sha512-94hK0Hh8rPqQl2xXc3HsaBoOXKV20MToPkcXvwbISWLEs+64sBq5kFgn2kJDHb1Pry9yrP0dxrCI9RRci7RXKg==
 
-smtp-server@3.13.0:
-  version "3.13.0"
-  resolved "https://registry.yarnpkg.com/smtp-server/-/smtp-server-3.13.0.tgz#014d67d5065ea067b0120954aaa8a5ce7353c39c"
-  integrity sha512-thVFqpwrHIJ25rXjXA6RYFUO35el2O+X7WJ006qMVAyFs5Ss6XGPJASg7Fh1QvT28ADIv9hGGXmgR+kaSEikwQ==
+smtp-server@3.13.2:
+  version "3.13.2"
+  resolved "https://registry.yarnpkg.com/smtp-server/-/smtp-server-3.13.2.tgz#0cab8a9533db8e4afef638fd2592c0136bdfba70"
+  integrity sha512-MWHAmsIlrfffQ75RDruOr5DhOJF8sPeG4iSW8a0euhOjaV107OGaRo30RXmmnmoKxS1mvaL+dtSEKbgev/9YeQ==
   dependencies:
     base32.js "0.1.0"
     ipv6-normalize "1.0.1"
-    nodemailer "6.9.4"
+    nodemailer "6.9.9"
+    punycode "2.3.1"
 
 socks-proxy-agent@^7.0.0:
   version "7.0.0"
