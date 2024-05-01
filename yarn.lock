@@ -4183,6 +4183,11 @@ nodemailer@6.9.11:
   resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.9.11.tgz#900703bd6dc62855d9cea962acf261926841f825"
   integrity sha512-UiAkgiERuG94kl/3bKfE8o10epvDnl0vokNEtZDPTq9BWzIl6EFT9336SbIT4oaTBD8NmmUTLsQyXHV82eXSWg==
 
+nodemailer@6.9.13:
+  version "6.9.13"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.9.13.tgz#5b292bf1e92645f4852ca872c56a6ba6c4a3d3d6"
+  integrity sha512-7o38Yogx6krdoBf3jCAqnIN4oSQFx+fMa0I7dK1D+me9kBxx12D+/33wSb+fhOCtIxvYJ+4x4IMEhmhCKfAiOA==
+
 nopt@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/nopt/-/nopt-5.0.0.tgz#530942bb58a512fccafe53fe210f13a25355dc88"
@@ -5173,14 +5178,14 @@ smart-buffer@^4.2.0:
   resolved "https://registry.yarnpkg.com/smart-buffer/-/smart-buffer-4.2.0.tgz#6e1d71fa4f18c05f7d0ff216dd16a481d0e8d9ae"
   integrity sha512-94hK0Hh8rPqQl2xXc3HsaBoOXKV20MToPkcXvwbISWLEs+64sBq5kFgn2kJDHb1Pry9yrP0dxrCI9RRci7RXKg==
 
-smtp-server@3.13.3:
-  version "3.13.3"
-  resolved "https://registry.yarnpkg.com/smtp-server/-/smtp-server-3.13.3.tgz#2a6e5d9d67a3e208fc427975b271d7ea8484001b"
-  integrity sha512-a5lGUfh0GkXGKHlDK/F6ErqIDOOGUGhcVnAiBB3a5iGQXPO95vY7LIceKsPYy96N8Aqsl4JZFANil46qh5m2mg==
+smtp-server@3.13.4:
+  version "3.13.4"
+  resolved "https://registry.yarnpkg.com/smtp-server/-/smtp-server-3.13.4.tgz#e188e75c296259fb420397d9fb605288910a6b90"
+  integrity sha512-BbElv5UP+HgPtCZtcRW35N/GFoc4DzPkrbSMLioXsrVMmQT1mMBoO0k+egl264hxWaWczoVvadSPY2pLUINFXg==
   dependencies:
     base32.js "0.1.0"
     ipv6-normalize "1.0.1"
-    nodemailer "6.9.11"
+    nodemailer "6.9.13"
     punycode "2.3.1"
 
 socks-proxy-agent@^7.0.0:
