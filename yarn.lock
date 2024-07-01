@@ -4792,10 +4792,10 @@ pure-rand@^6.0.0:
   resolved "https://registry.yarnpkg.com/pure-rand/-/pure-rand-6.0.1.tgz#31207dddd15d43f299fdcdb2f572df65030c19af"
   integrity sha512-t+x1zEHDjBwkDGY5v5ApnZ/utcd4XYDiJsaQQoptTXgUXX95sDg1elCdJghzicm7n2mbCBJ3uYWr6M22SO19rg==
 
-pushover-notifications@1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/pushover-notifications/-/pushover-notifications-1.2.2.tgz#32bd13f862bade346fe84313b695d6c34b84d69c"
-  integrity sha512-+3Xcj+kiMiouZK1Ws8yGBTyl8WMPZZdELgl/iVxYqNwDdlaObBHMhEGPRC6Zb9t0BE27ikOoOqSIO1cKZOtsDA==
+pushover-notifications@1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/pushover-notifications/-/pushover-notifications-1.2.3.tgz#89586e35355203d09db288ada0aa5eddb6d2972b"
+  integrity sha512-jVfniktfi8nYS5f1QsHs/fFAkzSaHYUcmn4CFOMMsv2wvvxvMgSJdjkdoRR0BqQU6uYs2QJs41PQhbqa1TkAIg==
 
 q@^1.5.1:
   version "1.5.1"

@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "mailparser": "3.6.9",
-    "pushover-notifications": "1.2.2",
+    "pushover-notifications": "1.2.3",
     "smtp-server": "3.13.4"
   },
   "devDependencies": {
