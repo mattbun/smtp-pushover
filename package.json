@@ -17,7 +17,7 @@
     "smtp-server": "3.13.4"
   },
   "devDependencies": {
-    "@types/jest": "29.5.12",
+    "@types/jest": "29.5.13",
     "@types/mailparser": "3.4.4",
     "@types/node": "18.19.47",
     "@types/smtp-server": "3.5.10",
