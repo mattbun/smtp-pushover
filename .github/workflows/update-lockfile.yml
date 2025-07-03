@@ -20,13 +20,15 @@ jobs:
           yarn install
           # if you use npm instead, comment above and uncomment below:
           # npm install
+
       - name: Commit updated lockfile
         uses: peter-evans/create-pull-request@v5
         with:
-          # Runs on the same branch; your PR will now include the lockfile update
-          commit-message: chore: update lockfile
-          title: Update lockfile
-          body: This PR was created automatically to update the lockfile after package.json changed.
-          labels: dependencies, automation
-          # The default GITHUB_TOKEN has rights to push to the branch in the same repo
+          commit-message: "chore: update lockfile"
+          title: "Update lockfile"
+          body: |
+            This PR was created automatically to update the lockfile after package.json changed.
+          labels: |
+            dependencies
+            automation
           token: ${{ secrets.GITHUB_TOKEN }}
