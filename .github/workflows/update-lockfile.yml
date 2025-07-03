@@ -12,23 +12,30 @@ on:
 
 jobs:
   update-lockfile:
-    # only run on PRs in this repo and skip Dependabot
-    if: ${{ github.actor != 'dependabot[bot]' && github.event.pull_request.head.repo.full_name == github.repository }}
     runs-on: ubuntu-latest
+    # Skip Dependabot; everything else (PRs or pushes) will run
+    if: ${{ github.actor != 'dependabot[bot]' }}
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          # If this is a PR, check out the PR branch;
+          # if it’s a push, check out the main branch.
+          ref: ${{ github.event_name == 'pull_request' 
+                   ? github.event.pull_request.head.ref 
+                   : github.ref_name }}
           fetch-depth: 0
 
-      - name: Install dependencies & regenerate lockfile
+      - name: Install & regenerate lockfile
         run: yarn install
 
       - name: Commit updated lockfile
         uses: peter-evans/create-pull-request@v5
         with:
-          base: ${{ github.event.pull_request.head.ref }}
+          # Commit back to the same branch
+          base: ${{ github.event_name == 'pull_request' 
+                    ? github.event.pull_request.head.ref 
+                    : github.ref_name }}
           commit-message: "chore: update lockfile"
           title: "Update lockfile"
           body: |
