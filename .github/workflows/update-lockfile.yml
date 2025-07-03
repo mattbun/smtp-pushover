@@ -9,21 +9,25 @@ on:
 jobs:
   update-lockfile:
     runs-on: ubuntu-latest
+    # Only run on PRs from this same repo (not forks)
     if: github.event.pull_request.head.repo.full_name == github.repository
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          # Checkout the PR branch, not just the detached commit
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
 
       - name: Install dependencies & regenerate lockfile
         run: |
-          # for Yarn
           yarn install
-          # if you use npm instead, comment above and uncomment below:
-          # npm install
 
       - name: Commit updated lockfile
         uses: peter-evans/create-pull-request@v5
         with:
+          # Push back to the same PR branch
+          base: ${{ github.event.pull_request.head.ref }}
           commit-message: "chore: update lockfile"
           title: "Update lockfile"
           body: |
