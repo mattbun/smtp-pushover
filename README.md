@@ -1,7 +1,5 @@
 # smtp-pushover
 
-![Docker Image Version (latest semver)](https://img.shields.io/docker/v/mattbun/smtp-pushover?sort=semver)
-
 A simple smtp (sendmail) server that forwards all emails to [pushover](https://pushover.net/).
 
 ## Why?
