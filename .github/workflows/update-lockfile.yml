@@ -1,0 +1,32 @@
+name: Update lockfile
+
+on:
+  pull_request:
+    # Only fire when package.json is modified in the PR
+    paths:
+      - 'package.json'
+
+jobs:
+  update-lockfile:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies & regenerate lockfile
+        run: |
+          # for Yarn
+          yarn install
+          # if you use npm instead, comment above and uncomment below:
+          # npm install
+      - name: Commit updated lockfile
+        uses: peter-evans/create-pull-request@v5
+        with:
+          # Runs on the same branch; your PR will now include the lockfile update
+          commit-message: chore: update lockfile
+          title: Update lockfile
+          body: This PR was created automatically to update the lockfile after package.json changed.
+          labels: dependencies, automation
+          # The default GITHUB_TOKEN has rights to push to the branch in the same repo
+          token: ${{ secrets.GITHUB_TOKEN }}
