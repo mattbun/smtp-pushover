@@ -1,6 +1,7 @@
 name: Update lockfile
 
 on:
+		workflow_dispatch:
   pull_request:
     paths:
       - 'package.json'
