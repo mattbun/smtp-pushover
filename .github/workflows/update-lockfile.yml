@@ -2,31 +2,28 @@ name: Update lockfile
 
 on:
   pull_request:
-    # Only fire when package.json is modified in the PR
     paths:
       - 'package.json'
 
 jobs:
   update-lockfile:
     runs-on: ubuntu-latest
-    # Only run on PRs from this same repo (not forks)
-    if: github.event.pull_request.head.repo.full_name == github.repository
+    if: >
+      github.event.pull_request.head.repo.full_name == github.repository
+      && github.actor != 'dependabot[bot]'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          # Checkout the PR branch, not just the detached commit
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
 
       - name: Install dependencies & regenerate lockfile
-        run: |
-          yarn install
+        run: yarn install
 
       - name: Commit updated lockfile
         uses: peter-evans/create-pull-request@v5
         with:
-          # Push back to the same PR branch
           base: ${{ github.event.pull_request.head.ref }}
           commit-message: "chore: update lockfile"
           title: "Update lockfile"
