@@ -1,4 +1,6 @@
 name: Build image
+permissions:
+  contents: read
 
 on:
   push:
