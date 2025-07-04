@@ -1,3 +1,4 @@
+# .github/workflows/lint-and-fix.yml
 name: Super-Linter Auto-Fix
 
 on:
@@ -24,32 +25,34 @@ jobs:
       - name: Run Super-Linter in fix mode
         uses: super-linter/super-linter@v7.4.0
         env:
-          GITHUB_TOKEN:           ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_ALL_CODEBASE:  ${{ github.event_name == 'workflow_dispatch' }}
+          GITHUB_TOKEN:             ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_ALL_CODEBASE:    ${{ github.event_name == 'workflow_dispatch' }}
 
-          # --- only lint these languages/formats ---
-          VALIDATE_JSON:          true
-          VALIDATE_YML:           true
-          VALIDATE_MD:            true
-          VALIDATE_TS:            true
+          # include only these
+          VALIDATE_JSON:            true
+          VALIDATE_YML:             true
+          VALIDATE_MD:              true
+          VALIDATE_TS:              true
 
-          AUTO_FIX:               true
-          OUTPUT_DETAILS:         true
+          # disable everything else
+          DISABLE_SHELLCHECK:       true
+          DISABLE_CHECKOV:          true
+          DISABLE_DOCKERFILE_HADOLINT: true
+          DISABLE_GITHUB_ACTIONS:   true
+
+          AUTO_FIX:                 true
+          OUTPUT_DETAILS:           true
+          SAVE_SUPER_LINTER_SUMMARY: false
 
       - name: Create or update lint-fix Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
-          base:            main
-          branch:          super-linter-fixes
-          title:           "chore(lint): apply Super-Linter fixes"
-          body:            |
-                            This pull request contains automatic fixes from Super-Linter.
-          commit-message:  "chore(lint): apply Super-Linter fixes"
-          path: |
-            **/*.json
-            **/*.yml
-            **/*.yaml
-            **/*.md
-            **/*.ts
-          draft:           false
-          token:           ${{ secrets.GITHUB_TOKEN }}
+          base:           main
+          branch:         super-linter-fixes
+          title:          chore(lint): apply Super-Linter fixes
+          body:           |
+                            This PR contains automatic fixes from Super-Linter.
+          commit-message: chore(lint): apply Super-Linter fixes
+          path:           '**/*.json,**/*.yml,**/*.yaml,**/*.md,**/*.ts'
+          draft:          false
+          token:          ${{ secrets.GITHUB_TOKEN }}
