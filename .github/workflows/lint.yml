@@ -45,9 +45,3 @@ jobs:
                              This pull request contains automatic fixes from Super-Linter.
           commit-message:  "chore(lint): apply Super-Linter fixes"
           draft:           false
-          path: |
-            **/*.json
-            **/*.yml
-            **/*.yaml
-            **/*.md
-            **/*.ts
