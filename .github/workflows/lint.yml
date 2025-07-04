@@ -30,4 +30,6 @@ jobs:
           VALIDATE_YML: true
           DISABLE_SHELLCHECK: true
           DISABLE_CHECKOV: true
+          VALIDATE_TYPESCRIPT_ES: true
+          OUTPUT_DETAILS: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
