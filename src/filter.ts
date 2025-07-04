@@ -1,3 +1,5 @@
+import escapeStringRegexp from 'escape-string-regexp';
+
 export function shouldIgnore(subject: string): boolean {
   const raw = process.env.IGNORE_SUBJECT_REGEX;
   if (!raw) return false;
@@ -12,10 +14,13 @@ export function shouldIgnore(subject: string): boolean {
 
   let re: RegExp;
   try {
-    re = new RegExp(trimmed, "i");
+    // escape all metacharacters so it's a literal match
+    const safePattern = escapeStringRegexp(trimmed);
+    re = new RegExp(safePattern, "i");
   } catch {
     console.warn(`Invalid IGNORE_SUBJECT_REGEX: ${raw}`);
     return false;
   }
+
   return re.test(subject);
 }
