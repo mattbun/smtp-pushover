@@ -1,25 +1,20 @@
 # .super-linter.yml
 
-# Core validators you want
+# 1) Enable the linters you want:
 VALIDATE_JSON:        true
-VALIDATE_MD:          true
 VALIDATE_YML:         true
+VALIDATE_MD:          true
 VALIDATE_TS:          true
+# (and any others you actually have code for)
 
-# Explicitly disable formatters you don’t use
-DISABLE_JSON_PRETTIER:       true
-DISABLE_MARKDOWN_PRETTIER:   true
-DISABLE_YAML_PRETTIER:       true
-DISABLE_TYPESCRIPT_PRETTIER: true
-DISABLE_JAVASCRIPT_PRETTIER: true
-
-# Explicitly turn off validators you don’t want
+# 2) Disable the ones you don’t need
+#    (otherwise it will run Checkov, ShellCheck, Hadolint, etc.)
 VALIDATE_CHECKOV:            false
 DISABLE_SHELLCHECK:          true
 DISABLE_DOCKERFILE_HADOLINT: true
 DISABLE_GITHUB_ACTIONS:      true
-DISABLE_JAVASCRIPT_ES:       true
+# …add more DISABLE_* lines here if you don’t want them
 
-# Meta options
-OUTPUT_DETAILS:      true
+# 3) Auto-fix and verbose output
 AUTO_FIX:            true
+OUTPUT_DETAILS:      true
