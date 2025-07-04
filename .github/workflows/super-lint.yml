@@ -36,7 +36,7 @@ jobs:
           VALIDATE_CHECKOV:             false
           VALIDATE_DOCKERFILE_HADOLINT: false
           VALIDATE_GITHUB_ACTIONS:      false
-          # add any more you want disabled…
+          # add any more you don’t need…
 
           AUTO_FIX:       true
           OUTPUT_DETAILS: true
@@ -46,10 +46,10 @@ jobs:
         with:
           base: main
           branch: super-linter-fixes
-          title: chore(lint): apply Super-Linter fixes
+          title: "chore(lint): apply Super-Linter fixes"
           body: |
             This pull request contains automatic formatting and lint fixes from Super-Linter.
-          commit-message: chore(lint): apply Super-Linter fixes
+          commit-message: "chore(lint): apply Super-Linter fixes"
           file-pattern: |
             **/*.json
             **/*.yml
