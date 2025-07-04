@@ -9,7 +9,7 @@ on:
 
 permissions:
   contents: write   # to push commits / open PRs
-  checks:   write   # so Super-Linter can post status checks
+  checks:   write   # for Super-Linter status updates
 
 jobs:
   lint-and-fix:
@@ -24,16 +24,16 @@ jobs:
       - name: Run Super-Linter in fix mode
         uses: super-linter/super-linter@v7.4.0
         env:
-          GITHUB_TOKEN:        ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN:         ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_ALL_CODEBASE: ${{ github.event_name == 'workflow_dispatch' }}
 
-          VALIDATE_JSON:       true
-          VALIDATE_YML:        true
-          VALIDATE_MD:         true
-          VALIDATE_TS:         true
+          VALIDATE_JSON:        true
+          VALIDATE_YML:         true
+          VALIDATE_MD:          true
+          VALIDATE_TS:          true
 
-          AUTO_FIX:           true
-          OUTPUT_DETAILS:     true
+          AUTO_FIX:            true
+          OUTPUT_DETAILS:      true
 
       - name: Create or update lint-fix Pull Request
         uses: peter-evans/create-pull-request@v6
@@ -43,7 +43,7 @@ jobs:
           branch:          super-linter-fixes
           title:           "chore(lint): apply Super-Linter fixes"
           body:            |
-                              This pull request contains automatic fixes from Super-Linter.
+            This pull request contains automatic fixes from Super-Linter.
           commit-message:  "chore(lint): apply Super-Linter fixes"
           draft:           false
           path: |
