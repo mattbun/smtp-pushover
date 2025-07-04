@@ -6,7 +6,6 @@ export function shouldIgnore(subject: string): boolean {
 
   const trimmed = raw.trim();
 
-  // simple DOS guard: don’t allow crazy‐long patterns
   if (trimmed.length > 100) {
     console.warn(`IGNORE_SUBJECT_REGEX too long, ignoring filter`);
     return false;
@@ -14,7 +13,6 @@ export function shouldIgnore(subject: string): boolean {
 
   let re: RegExp;
   try {
-    // escape all metacharacters so it's a literal match
     const safePattern = escapeStringRegexp(trimmed);
     re = new RegExp(safePattern, "i");
   } catch {
