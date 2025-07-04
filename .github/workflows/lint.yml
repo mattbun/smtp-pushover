@@ -1,4 +1,4 @@
-# .github/workflows/lint-and-fix.yml
+# .github/workflows/lint.yml
 name: Super-Linter Auto-Fix
 
 on:
@@ -9,8 +9,8 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write   # to open/update PRs
-  checks:   write   # for Super-Linter status updates
+  contents: write
+  checks:   write
 
 jobs:
   lint-and-fix:
@@ -33,9 +33,6 @@ jobs:
           VALIDATE_TS:              true
           AUTO_FIX:                 true
           OUTPUT_DETAILS:           true
-          
-      - name: Clean untracked files
-        run: git clean -fdx
         
       - name: Create or update lint-fix Pull Request
         uses: peter-evans/create-pull-request@v6
