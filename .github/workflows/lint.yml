@@ -1,0 +1,55 @@
+# .github/workflows/lint.yml
+name: Super-Linter
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+  checks:   write
+
+jobs:
+  lint-and-fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run Super-Linter in fix mode
+        uses: super-linter/super-linter@v7.4.0
+        env:
+          GITHUB_TOKEN:        ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_ALL_CODEBASE: ${{ github.event_name == 'workflow_dispatch' }}
+
+          # ——— include-only list ———
+          VALIDATE_JSON: true
+          VALIDATE_YML:  true
+          VALIDATE_MD:   true
+          VALIDATE_TS:   true
+
+          # no VALIDATE_*: false here!
+
+          AUTO_FIX:       true
+          OUTPUT_DETAILS: true
+
+      - name: Create/Update lint-fix Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          base:   main
+          branch: super-linter-fixes
+          title:  "chore(lint): apply Super-Linter fixes"
+          body:   This pull request applies automatic fixes from Super-Linter.
+          commit-message: "chore(lint): apply Super-Linter fixes"
+          file-pattern: |
+            **/*.json
+            **/*.yml
+            **/*.yaml
+            **/*.md
+            **/*.ts
+          draft: false
+          token: ${{ secrets.GITHUB_TOKEN }}
