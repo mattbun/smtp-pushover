@@ -10,10 +10,9 @@ permissions:
 
 jobs:
   update-lockfile:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]' }}
     runs-on: ubuntu-latest
-    if: >
-      github.event.pull_request.head.repo.full_name == github.repository
-      && github.actor != 'dependabot[bot]'
+
     steps:
       - name: Checkout PR branch
         uses: actions/checkout@v5
@@ -28,8 +27,9 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           base: ${{ github.event.pull_request.head.ref }}
-          commit-message: chore: update lockfile
-          title: Update yarn.lock
+          # <-- These two need to be quoted
+          commit-message: "chore: update lockfile"
+          title: "Update yarn.lock"
           body: |
             This PR was updated automatically to regenerate the lockfile after changes to package.json.
           labels: |
