@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1.4
 ARG NODE_VERSION
 FROM node:${NODE_VERSION}-alpine AS build
 
