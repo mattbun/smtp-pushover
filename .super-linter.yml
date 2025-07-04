@@ -1,26 +1,25 @@
 # .super-linter.yml
 
-# Only run the linters you actually want
+# Core validators you want
 VALIDATE_JSON:        true
 VALIDATE_MD:          true
 VALIDATE_YML:         true
 VALIDATE_TS:          true
 
-# Disable the built-in Prettier formatters (conflicts with VALIDATE_* linters)
+# Explicitly disable formatters you don’t use
 DISABLE_JSON_PRETTIER:       true
 DISABLE_MARKDOWN_PRETTIER:   true
 DISABLE_YAML_PRETTIER:       true
 DISABLE_TYPESCRIPT_PRETTIER: true
 DISABLE_JAVASCRIPT_PRETTIER: true
 
-# Turn off everything else that you don’t need:
-VALIDATE_CHECKOV:            false  # <— this actually disables Checkov
+# Explicitly turn off validators you don’t want
+VALIDATE_CHECKOV:            false
 DISABLE_SHELLCHECK:          true
 DISABLE_DOCKERFILE_HADOLINT: true
 DISABLE_GITHUB_ACTIONS:      true
 DISABLE_JAVASCRIPT_ES:       true
-# (leave VALIDATE_TS:true so your TS linter still runs)
 
-# Meta
+# Meta options
 OUTPUT_DETAILS:      true
 AUTO_FIX:            true
