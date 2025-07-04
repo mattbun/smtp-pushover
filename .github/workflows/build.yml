@@ -53,7 +53,7 @@ jobs:
           context: .
           file: ./Dockerfile
           build-args: |
-            NODE_VERSION=$(cat .nvmrc)
+            NODE_VERSION=${{ steps.read_nvm.outputs.node_version }}
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
