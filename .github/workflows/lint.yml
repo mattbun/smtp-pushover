@@ -33,6 +33,8 @@ jobs:
           VALIDATE_TS:              true
           AUTO_FIX:                 true
           OUTPUT_DETAILS:           true
+          SAVE_SUPER_LINTER_OUTPUT:  false
+          SAVE_SUPER_LINTER_SUMMARY: false
 
       - name: Create or update lint-fix Pull Request
         uses: peter-evans/create-pull-request@v6
