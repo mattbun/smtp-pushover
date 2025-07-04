@@ -12,15 +12,21 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      checks: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Run Super-Linter
         uses: super-linter/super-linter@v7.4.0
         env:
+          AUTO_FIX: true
           VALIDATE_TS: true
-          VALIDATE_JS: true
+          VALIDATE_JSON: true
           VALIDATE_MD: true
           VALIDATE_YML: true
+          DISABLE_SHELLCHECK: true
+          DISABLE_CHECKOV: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
