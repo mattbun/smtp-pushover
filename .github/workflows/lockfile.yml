@@ -1,0 +1,38 @@
+name: Update lockfile
+
+on:
+  pull_request:
+    paths:
+      - 'package.json'
+
+permissions:
+  contents: write
+
+jobs:
+  update-lockfile:
+    runs-on: ubuntu-latest
+    if: >
+      github.event.pull_request.head.repo.full_name == github.repository
+      && github.actor != 'dependabot[bot]'
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+
+      - name: Regenerate lockfile
+        run: yarn install
+
+      - name: Push lockfile update
+        uses: peter-evans/create-pull-request@v6
+        with:
+          base: ${{ github.event.pull_request.head.ref }}
+          commit-message: chore: update lockfile
+          title: Update yarn.lock
+          body: |
+            This PR was updated automatically to regenerate the lockfile after changes to package.json.
+          labels: |
+            dependencies
+            automation
+          token: ${{ secrets.GITHUB_TOKEN }}
