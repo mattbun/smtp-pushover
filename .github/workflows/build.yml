@@ -20,6 +20,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Read .nvmrc
+        id: read_nvm
+        run: |
+          NODE_VERSION=$(cat .nvmrc)
+          echo "node_version=$NODE_VERSION" >> $GITHUB_OUTPUT
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
