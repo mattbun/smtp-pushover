@@ -8,7 +8,7 @@ It's an easy way to get tools like `smartmontools` to send you push notification
 
 ## How do I use it?
 
-Docker images are available at [Docker Hub](https://hub.docker.com/r/mattbun/smtp-pushover) and [GitHub Container Registry](https://github.com/mattbun/smtp-pushover/pkgs/container/smtp-pushover).
+Docker images are available at [GitHub Container Registry](https://github.com/jpwtck/smtp-pushover/pkgs/container/smtp-pushover).
 
 To use it with `docker-compose`, you could configure it like this:
 
@@ -43,10 +43,3 @@ echo -e "Subject:Test\n\nHello" | msmtp blah@blah.com
 * The destination email doesn't matter, smtp-pushover will forward all email to pushover.
 * The subject of the email becomes the title of the push notification.
 * The contents of the email become the text of the push notification.
-
-## Development
-
-1. Clone this repo
-2. `yarn install` to install dependencies
-3. `yarn build` to compile typescript
-4. `yarn start` to start the server
