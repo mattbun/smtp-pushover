@@ -32,6 +32,7 @@ jobs:
           VALIDATE_TS:              true
           AUTO_FIX:                 true
           OUTPUT_DETAILS:           true
+          SAVE_SUPER_LINTER_OUTPUT:  false
         
       - name: Commit and push linting fixes
         # Run only on:
