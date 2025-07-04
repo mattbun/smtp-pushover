@@ -36,9 +36,6 @@ jobs:
           AUTO_FIX:              true
           OUTPUT_DETAILS:        true
 
-      - name: Clean up Super-Linter output
-        run: rm -rf super-linter-output
-
       - name: Create or update lint-fix Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
