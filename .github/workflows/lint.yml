@@ -1,20 +1,20 @@
-# .github/workflows/lint.yml
-name: Super-Linter
+name: Super-Linter Auto-Fix
 
 on:
-  workflow_dispatch:
-  pull_request:
-    branches: [ main ]
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
 
 permissions:
-  contents: write
-  checks:   write
+  contents: write   # to open/update PRs
+  checks:   write   # for Super-Linter status updates
 
 jobs:
   lint-and-fix:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -23,33 +23,34 @@ jobs:
       - name: Run Super-Linter in fix mode
         uses: super-linter/super-linter@v7.4.0
         env:
-          GITHUB_TOKEN:        ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_ALL_CODEBASE: ${{ github.event_name == 'workflow_dispatch' }}
+          GITHUB_TOKEN:          ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_ALL_CODEBASE: "${{ github.event_name == 'workflow_dispatch' }}"
 
-          # ——— include-only list ———
+          # only these linters
           VALIDATE_JSON: true
           VALIDATE_YML:  true
           VALIDATE_MD:   true
           VALIDATE_TS:   true
 
-          # no VALIDATE_*: false here!
-
           AUTO_FIX:       true
           OUTPUT_DETAILS: true
 
-      - name: Create/Update lint-fix Pull Request
+      - name: Clean up Super-Linter output
+        run: rm -rf super-linter-output
+
+      - name: Create or update lint-fix Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
-          base:   main
-          branch: super-linter-fixes
-          title:  "chore(lint): apply Super-Linter fixes"
-          body:   This pull request applies automatic fixes from Super-Linter.
+          base:           main
+          branch:         super-linter-fixes
+          title:          chore(lint): apply Super-Linter fixes
+          body:           This PR applies automatic fixes from Super-Linter.
           commit-message: "chore(lint): apply Super-Linter fixes"
-          file-pattern: |
+          paths: |
             **/*.json
             **/*.yml
             **/*.yaml
             **/*.md
             **/*.ts
           draft: false
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token:           ${{ secrets.GITHUB_TOKEN }}
