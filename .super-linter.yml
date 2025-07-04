@@ -1,20 +1,17 @@
-# .super-linter.yml
+# .super-linter.yml (repo root)
 
-# 1) Enable the linters you want:
+# Only run these
 VALIDATE_JSON:        true
 VALIDATE_YML:         true
 VALIDATE_MD:          true
 VALIDATE_TS:          true
-# (and any others you actually have code for)
 
-# 2) Disable the ones you don’t need
-#    (otherwise it will run Checkov, ShellCheck, Hadolint, etc.)
-VALIDATE_CHECKOV:            false
-DISABLE_SHELLCHECK:          true
-DISABLE_DOCKERFILE_HADOLINT: true
-DISABLE_GITHUB_ACTIONS:      true
-# …add more DISABLE_* lines here if you don’t want them
+# Explicitly turn _off_ the rest
+VALIDATE_CHECKOV:           false
+VALIDATE_DOCKERFILE_HADOLINT: false
+VALIDATE_GITHUB_ACTIONS:     false
+# (and so on for any other you don’t want)
 
-# 3) Auto-fix and verbose output
-AUTO_FIX:            true
-OUTPUT_DETAILS:      true
+# Auto‐fix & more detail
+AUTO_FIX:           true
+OUTPUT_DETAILS:     true
