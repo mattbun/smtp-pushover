@@ -1,41 +1,26 @@
-# .github/workflows/lint.yml
 name: Lint
 
-on: # yamllint disable-line rule:truthy
-  push: null
-  pull_request: null
-
-permissions: {}
-
-jobs:
-  build:
-    name: Lint
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: read
-      # To report GitHub Actions status checks
-      statuses: write
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
 
 permissions:
-  contents: read   # needed to clone your repo
-  checks:   write  # needed so Super-Linter can report status checks
+  contents: read    # so checkout works
+  checks:   write   # so Super-Linter can report status
 
 jobs:
   super-lint:
-    name: Super-Linter
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Checkout full history
         uses: actions/checkout@v4
         with:
-          # super-linter needs the full git history to get the
-          # list of files that changed across commits
           fetch-depth: 0
 
-      - name: Super-linter
-        uses: super-linter/super-linter@v7.4.0 # x-release-please-version
+      - name: Run Super-Linter
+        uses: super-linter/super-linter@v7.4.0
         env:
-          # To report GitHub Actions status checks
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
