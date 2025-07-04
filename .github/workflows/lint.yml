@@ -8,13 +8,14 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: write
-  checks:   write
+  contents: write   # so we can open/update PRs & commit fixes
+  checks:   write   # so Super-Linter can post status checks
 
 jobs:
   lint-and-fix:
     name: Lint & Auto-Fix
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -23,12 +24,17 @@ jobs:
 
       - name: Run Super-Linter
         uses: super-linter/super-linter@v7.4.0
-        # Super-Linter will read your .super-linter.yml automatically
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # Super-Linter will pull in your root‐level .super-linter.yml
+        # which already contains your VALIDATE_*/DISABLE_*/AUTO_FIX settings.
 
       - name: Create Lint-Fix Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
+          # target branch to merge into:
           base:   main
+          # name of the branch we'll push fixes onto:
           branch: super-linter-fixes
           title:  "chore(lint): apply Super-Linter fixes"
           body: |
@@ -41,5 +47,6 @@ jobs:
             **/*.json
             **/*.ts
             **/*.js
+          # if you’d rather have it open as a draft first, set draft: true
           draft: false
           token: ${{ secrets.GITHUB_TOKEN }}
