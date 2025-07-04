@@ -1,7 +1,7 @@
 # .github/workflows/lint.yml
-name: Super-Linter Auto-Fix
+name: Lint
 
-on:
+on: # yamllint disable-line rule:truthy
   push:
     branches: [ main ]
   pull_request:
@@ -10,20 +10,19 @@ on:
 
 permissions:
   contents: write
-  checks:   write
+  statuses: write
 
 jobs:
-  lint-and-fix:
+  fix-lint-issues:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Run Super-Linter in fix mode
-        uses: super-linter/super-linter@v7.4.0
+      - name: Super-Linter
+        uses: super-linter/super-linter@v7.4.0 # x-release-please-version
         env:
           GITHUB_TOKEN:             ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_ALL_CODEBASE:    ${{ github.event_name == 'workflow_dispatch' }}
@@ -34,14 +33,16 @@ jobs:
           AUTO_FIX:                 true
           OUTPUT_DETAILS:           true
         
-      - name: Create or update lint-fix Pull Request
-        uses: peter-evans/create-pull-request@v6
+      - name: Commit and push linting fixes
+        # Run only on:
+        # - Pull requests
+        # - Not on the default branch
+        if: >
+          github.event_name == 'pull_request' &&
+          github.ref_name != github.event.repository.default_branch
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          token:           ${{ secrets.GITHUB_TOKEN }}
-          base:            main
-          branch:          super-linter-fixes
-          title:           "chore(lint): apply Super-Linter fixes"
-          body:            |
-                             This pull request contains automatic fixes from Super-Linter.
-          commit-message:  "chore(lint): apply Super-Linter fixes"
-          draft:           false
+          branch: ${{ github.event.pull_request.head.ref || github.head_ref || github.ref }}
+          commit_message: "chore: fix linting issues"
+          commit_user_name: super-linter
+          commit_user_email: super-linter@super-linter.dev
