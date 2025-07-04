@@ -12,7 +12,8 @@
   "dependencies": {
     "mailparser": "^3.7.4",
     "pushover-notifications": "^1.2.3",
-    "smtp-server": "^3.13.6"
+    "smtp-server": "^3.13.6",
+    "escape-string-regexp": "^5.0.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
