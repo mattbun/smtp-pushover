@@ -2,21 +2,22 @@ name: Super-Linter Auto-Fix
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
-  contents: write    # so we can push branches/PRs
-  statuses: write    # so Super-Linter can report status checks
+  contents: write   # to push branches & PRs
+  checks:   write   # so Super-Linter can report status checks
 
 jobs:
   lint-and-fix:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -24,22 +25,22 @@ jobs:
       - name: Run Super-Linter in fix mode
         uses: super-linter/super-linter@v7.4.0
         env:
+          # required so status checks can be reported & fixes committed
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-          # when manually triggered, lint the entire repo; otherwise only changed files
+          # if manually triggered, lint the entire repo
           VALIDATE_ALL_CODEBASE: ${{ github.event_name == 'workflow_dispatch' }}
 
-          # only these languages
+          # only these linters (others will be skipped)
           VALIDATE_JSON: true
           VALIDATE_YML:  true
           VALIDATE_MD:   true
           VALIDATE_TS:   true
 
-          # auto-fix and output details
           AUTO_FIX:       true
           OUTPUT_DETAILS: true
 
-      - name: Clean up summary folder
+      - name: Clean up Super-Linter output
         run: rm -rf super-linter-output
 
       - name: Create or update lint-fix Pull Request
@@ -50,9 +51,10 @@ jobs:
           branch:          super-linter-fixes
           title:           chore(lint): apply Super-Linter fixes
           body:            |
-                            This PR applies automatic fixes from Super-Linter.
+            This pull request applies automatic formatting & lint fixes
+            from Super-Linter.
           commit-message:  chore(lint): apply Super-Linter fixes
-          path: |
+          paths: |
             **/*.json
             **/*.yml
             **/*.yaml
