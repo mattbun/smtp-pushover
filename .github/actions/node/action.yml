@@ -1,0 +1,8 @@
+name: 'Setup Node.js'
+description: 'Always use Node for all the workflows'
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '22.x'
