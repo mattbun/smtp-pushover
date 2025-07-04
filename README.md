@@ -17,7 +17,7 @@ services:
   smtp-pushover:
     restart: unless-stopped
     container_name: smtp-pushover
-    image: ghcr.io/mattbun/smtp-pushover
+    image: ghcr.io/jpwtck/smtp-pushover
     ports:
       - "25:25"
     environment:
