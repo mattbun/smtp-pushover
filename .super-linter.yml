@@ -1,12 +1,20 @@
 # .super-linter.yml
-VALIDATE_JSON:      true
-VALIDATE_MD:        true
-VALIDATE_YML:       true
-VALIDATE_TS:        true
-#VALIDATE_TYPESCRIPT_ES: true
 
-DISABLE_SHELLCHECK: true
-DISABLE_CHECKOV:    true
+# Core validators
+VALIDATE_JSON:           true
+VALIDATE_MD:             true
+VALIDATE_YML:            true
+VALIDATE_TS:             true
 
-OUTPUT_DETAILS:     true
-AUTO_FIX:           true
+# Formatters
+VALIDATE_YAML_PRETTIER:  true   # ← enable Prettier for YAML
+DISABLE_JSON_PRETTIER:   true   # ← avoid conflicts with VALIDATE_JSON
+# (if you ever want Prettier for TS/JS, you can enable VALIDATE_TYPESCRIPT_PRETTIER)
+
+# Disable stuff you don’t need
+DISABLE_SHELLCHECK:      true
+DISABLE_CHECKOV:         true
+
+# Meta
+OUTPUT_DETAILS:          true
+AUTO_FIX:                true
