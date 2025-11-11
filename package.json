@@ -9,7 +9,7 @@
     "start": "node dist/index.js",
     "debug": "node --inspect-brk dist/index.js",
     "test": "jest --passWithNoTests",
-    "sendmail": "echo -e \"Subject: subject\n\ntext\" | msmtp -v --host localhost --port 2525 --from from@test.com to@test.com"
+    "sendmail": "echo -e \"Subject: subject\n\ntext\" | msmtp -v --host localhost --port 25 --from from@test.com to@test.com"
   },
   "dependencies": {
     "mailparser": "3.7.4",
@@ -23,7 +23,9 @@
     "@types/smtp-server": "3.5.10",
     "conventional-changelog-conventionalcommits": "5.0.0",
     "cz-conventional-changelog": "3.3.0",
-    "jest": "29.7.0",
+    "dotenv": "^17.2.3",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.11",
     "semantic-release": "19.0.5",
     "ts-jest": "29.4.5",
     "ts-node": "10.9.2",
