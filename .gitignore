@@ -115,3 +115,6 @@ dist
 # End of https://www.toptal.com/developers/gitignore/api/node
 
 .direnv
+*.code-workspace
+package-lock.json
+*.lock
