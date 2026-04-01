@@ -3844,10 +3844,10 @@ lru-cache@^7.4.4, lru-cache@^7.5.1, lru-cache@^7.7.1:
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-7.14.0.tgz#21be64954a4680e303a09e9468f880b98a0b3c7f"
   integrity sha512-EIRtP1GrSJny0dqb50QXRUNBxHJhcpxHC++M5tD7RYbvLLn5KVWKsbyswSSqDuU15UFi3bgTQIY8nhDMeF6aDQ==
 
-mailparser@3.9.3:
-  version "3.9.3"
-  resolved "https://registry.yarnpkg.com/mailparser/-/mailparser-3.9.3.tgz#52e4e845942f1e72d3c026e77f47da4613fd1fe0"
-  integrity sha512-AnB0a3zROum6fLaa52L+/K2SoRJVyFDk78Ea6q1D0ofcZLxWEWDtsS1+OrVqKbV7r5dulKL/AwYQccFGAPpuYQ==
+mailparser@3.9.6:
+  version "3.9.6"
+  resolved "https://registry.yarnpkg.com/mailparser/-/mailparser-3.9.6.tgz#7264a059f337b721aef364220d25e454d4544dcb"
+  integrity sha512-EJYTDWMrOS1kddK1mTsRkrx2Ngh2nYsg54SRMWVVWGVEGbHH4tod8tqqU9hIRPgGQVboSjFubDn9cboSitbM3Q==
   dependencies:
     "@zone-eu/mailsplit" "5.4.8"
     encoding-japanese "2.2.0"
@@ -3856,7 +3856,7 @@ mailparser@3.9.3:
     iconv-lite "0.7.2"
     libmime "5.3.7"
     linkify-it "5.0.0"
-    nodemailer "7.0.13"
+    nodemailer "8.0.4"
     punycode.js "2.3.1"
     tlds "1.261.0"
 
@@ -4176,6 +4176,11 @@ nodemailer@7.0.13:
   version "7.0.13"
   resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-7.0.13.tgz#74acaa55f0c6f9476384c29f27f53e467e8483cd"
   integrity sha512-PNDFSJdP+KFgdsG3ZzMXCgquO7I6McjY2vlqILjtJd0hy8wEvtugS9xKRF2NWlPNGxvLCXlTNIae4serI7dinw==
+
+nodemailer@8.0.4:
+  version "8.0.4"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-8.0.4.tgz#b63626585693f37a390ddaecde273da991c76010"
+  integrity sha512-k+jf6N8PfQJ0Fe8ZhJlgqU5qJU44Lpvp2yvidH3vp1lPnVQMgi4yEEMPXg5eJS1gFIJTVq1NHBk7Ia9ARdSBdQ==
 
 nopt@^5.0.0:
   version "5.0.0"
