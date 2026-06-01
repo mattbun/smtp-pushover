@@ -1213,10 +1213,10 @@
   resolved "https://registry.yarnpkg.com/@types/retry/-/retry-0.12.0.tgz#2b35eccfcee7d38cd72ad99232fbd58bffb3c84d"
   integrity sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==
 
-"@types/smtp-server@3.5.12":
-  version "3.5.12"
-  resolved "https://registry.yarnpkg.com/@types/smtp-server/-/smtp-server-3.5.12.tgz#25df8be25cd4f1338152821bd6ff17907966f3ee"
-  integrity sha512-IBemrqI6nzvbgwE41Lnd4v4Yf1Kc7F1UHjk1GFBLNhLcI/Zop1ggHQ8g7Y8QYc6jGVgzWQcsa0MBNcGnDY9UGw==
+"@types/smtp-server@3.5.13":
+  version "3.5.13"
+  resolved "https://registry.yarnpkg.com/@types/smtp-server/-/smtp-server-3.5.13.tgz#78dee0c47067e364fc209db2e0e80d80f52dcb92"
+  integrity sha512-S3rGl2KbViH+98/CgHipPIWgtAFnjxLsppxIRbgJHNuZL7Y+py+7kZjT7xS+wOmCxYTn4O7IqLqkvekg99MDVQ==
   dependencies:
     "@types/node" "*"
     "@types/nodemailer" "*"
@@ -4182,10 +4182,10 @@ node-releases@^2.0.6:
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.6.tgz#8a7088c63a55e493845683ebf3c828d8c51c5503"
   integrity sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg==
 
-nodemailer@8.0.4:
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-8.0.4.tgz#b63626585693f37a390ddaecde273da991c76010"
-  integrity sha512-k+jf6N8PfQJ0Fe8ZhJlgqU5qJU44Lpvp2yvidH3vp1lPnVQMgi4yEEMPXg5eJS1gFIJTVq1NHBk7Ia9ARdSBdQ==
+nodemailer@8.0.10:
+  version "8.0.10"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-8.0.10.tgz#009d4deaa06f54b6bd7ddc6cac1bf78e3bcb0bf2"
+  integrity sha512-BLFuSth7QtHOkBzyqTehWWyub0NTRDuK2Q2SQfnGLsrJnzyU+Yeh4WpV1eZGuARFj1xQJHIdnTuJZLP+b9R1GQ==
 
 nodemailer@8.0.5:
   version "8.0.5"
@@ -5187,13 +5187,13 @@ smart-buffer@^4.2.0:
   resolved "https://registry.yarnpkg.com/smart-buffer/-/smart-buffer-4.2.0.tgz#6e1d71fa4f18c05f7d0ff216dd16a481d0e8d9ae"
   integrity sha512-94hK0Hh8rPqQl2xXc3HsaBoOXKV20MToPkcXvwbISWLEs+64sBq5kFgn2kJDHb1Pry9yrP0dxrCI9RRci7RXKg==
 
-smtp-server@3.18.3:
-  version "3.18.3"
-  resolved "https://registry.yarnpkg.com/smtp-server/-/smtp-server-3.18.3.tgz#151104c9233f4a64917afb844fdaaf31c06edab6"
-  integrity sha512-bPEqRNHFYcb2s7kPIka3pkF//2V87miqGUy2bMm+CJu3zbRpePMLpF7sUAIUFcZgkUzDB7ivxe6zKgNrxsZ00w==
+smtp-server@3.18.5:
+  version "3.18.5"
+  resolved "https://registry.yarnpkg.com/smtp-server/-/smtp-server-3.18.5.tgz#37f8511a17531a5ae4715c80138153ff7ae5a441"
+  integrity sha512-7QSg3x8vMT2VR1XBBUfYKU6w6Qzxal9sHDK2oHzH8Wbhd/FJ4+L43KK6N/jAkrmVET6WIRghZ+e0k3k9OgMISA==
   dependencies:
     ipv6-normalize "1.0.1"
-    nodemailer "8.0.4"
+    nodemailer "8.0.10"
     punycode.js "2.3.1"
 
 socks-proxy-agent@^7.0.0:
