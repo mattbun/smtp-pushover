@@ -14,7 +14,7 @@
   "dependencies": {
     "mailparser": "3.9.8",
     "pushover-notifications": "1.2.3",
-    "smtp-server": "3.18.5"
+    "smtp-server": "3.19.4"
   },
   "devDependencies": {
     "@types/jest": "29.5.14",
