@@ -12,13 +12,13 @@
     "sendmail": "echo -e \"Subject: subject\n\ntext\" | msmtp -v --host localhost --port 2525 --from from@test.com to@test.com"
   },
   "dependencies": {
-    "mailparser": "3.9.8",
+    "mailparser": "3.9.36",
     "pushover-notifications": "1.2.3",
     "smtp-server": "3.19.4"
   },
   "devDependencies": {
     "@types/jest": "29.5.14",
-    "@types/mailparser": "3.4.6",
+    "@types/mailparser": "3.9.0",
     "@types/node": "18.19.130",
     "@types/smtp-server": "3.5.13",
     "conventional-changelog-conventionalcommits": "5.0.0",
