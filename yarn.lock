@@ -4187,15 +4187,15 @@ node-releases@^2.0.6:
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.6.tgz#8a7088c63a55e493845683ebf3c828d8c51c5503"
   integrity sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg==
 
+nodemailer@10.3.1:
+  version "10.3.1"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-10.3.1.tgz#77295b3b5dd00b93e96962a55255a21321ce8f32"
+  integrity sha512-uF0AFsJC07Y1vdW7p580DKAnh7rAO+4UPSSB3mDCPNDufoiaOebV6JmrzpxB14OjEEEiBsNdYoM2Y+fN8M7BBA==
+
 nodemailer@8.0.5:
   version "8.0.5"
   resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-8.0.5.tgz#2076fb2b5c1ccfe1c88f6e1aa47c0229ea642e0c"
   integrity sha512-0PF8Yb1yZuQfQbq+5/pZJrtF6WQcjTd5/S4JOHs9PGFxuTqoB/icwuB44pOdURHJbRKX1PPoJZtY7R4VUoCC8w==
-
-nodemailer@9.0.6:
-  version "9.0.6"
-  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-9.0.6.tgz#4f3f6b902043823aec98f7b1ee0e3b418c574596"
-  integrity sha512-IQUGFdhdGwI9+AWX+FpUt4DLmvFaOjTMEoneTIWX/RXxuy1TdenPwWrvFMSfLkPKl+HQEXWuSAxEMMbPYXtBmg==
 
 nopt@^5.0.0:
   version "5.0.0"
@@ -5192,13 +5192,13 @@ smart-buffer@^4.2.0:
   resolved "https://registry.yarnpkg.com/smart-buffer/-/smart-buffer-4.2.0.tgz#6e1d71fa4f18c05f7d0ff216dd16a481d0e8d9ae"
   integrity sha512-94hK0Hh8rPqQl2xXc3HsaBoOXKV20MToPkcXvwbISWLEs+64sBq5kFgn2kJDHb1Pry9yrP0dxrCI9RRci7RXKg==
 
-smtp-server@3.19.4:
-  version "3.19.4"
-  resolved "https://registry.yarnpkg.com/smtp-server/-/smtp-server-3.19.4.tgz#964bf5c34fed1381d47df9efc999c92f7a741f22"
-  integrity sha512-ThET3Upb7y6KfZArVPESLXafPurJ+bHAs5h0I+MzJKqVng2oDMgGo521HSuk4O+A8BfC1RgHjM7UvAVNRiDUOA==
+smtp-server@3.21.3:
+  version "3.21.3"
+  resolved "https://registry.yarnpkg.com/smtp-server/-/smtp-server-3.21.3.tgz#7eb2a7edb4a2eb2e37b67072c80b6c4d055069e1"
+  integrity sha512-RJRuhJWt+Zs8/c9Pa1Qrzz7RO49iRxrdj+7CXjz+zwRZLVliYyM/vrqF4VxsFH67eLCNW9kM3o5K9tHvlPuiIw==
   dependencies:
     ipv6-normalize "1.0.1"
-    nodemailer "9.0.6"
+    nodemailer "10.3.1"
     punycode.js "2.3.1"
 
 socks-proxy-agent@^7.0.0:
